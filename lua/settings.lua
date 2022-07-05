@@ -23,8 +23,9 @@ vim.opt.undodir = "~/.vim/undodir"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.signcolumn = "yes"
-vim.opt.laststatus = 3
-vim.opt.cursorline = true
+vim.opt.laststatus = 2
+vim.opt.cursorline = false
+vim.opt.termguicolors = true
 vim.g.mapleader = " "
 vim.cmd([[
 set guifont=Ubuntu\ Mono:h9
@@ -45,7 +46,9 @@ end
 acmd("BufEnter", "hi IncSearch ctermfg=red ctermbg=white", higroup)
 acmd("BufEnter", "hi WinSeparator ctermfg=grey", higroup)
 acmd("BufEnter", "hi StatusLine ctermfg=darkgrey ctermbg=black", higroup)
-acmd("BufEnter", "hi CursorLine cterm=bold ctermfg=none ctermbg=none", higroup)
+acmd("BufEnter", "hi CursorLine cterm=bold gui=bold", higroup)
+acmd("BufEnter", "hi LineNr guibg=none", higroup)
+acmd("BufEnter", "hi SignColumn guibg=none", higroup)
 
 -- colorscheme
-vim.cmd("colorscheme wal")
+vim.cmd("colorscheme zenburn")
